@@ -9,22 +9,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Methods
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+  Two data sets that will be used for this study is census block group information from IPUMS NHGIS (https://www.nhgis.org/) focusing on poverty and average personal and household incomes as well as average age of structure built. The other dataset that I am using is the Urban FIA  (https://www.fia.fs.usda.gov/program-features/urban/) dataset which is the urban forest inventory and analysis and is a set of tree and plot data that  contains information about urban trees of condition, type, and much more with both measured and calculated values. This dataset has information for 10 cities across the US which will be the areas of focus for this study. These will be the two data sets that are used in this study in order to conduct the necessary spatial analysis.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The Urban FIA data has trees within plots, which have location values associated with them. In order to conduct spatial analysis on tree information it is necessary to combine this information at some point. First, however, we must find the average household income associated with each plot. One catch with the FIA data set is that plot locations are blurred, this means that the locations in the data set are not the actual locations of the plots but somewhere close by. In order to account for this the next step  in the analysis is to buffer the plots by one kilometer which is the maximum inaccuracy of the plot location. The next step is to intersect the plot buffers with census block group information. This creates spatial areas only within the plot buffers which aggregates the income of the surrounding block groups with a weighted average household income.. Then dissolve by plot in order to create one polygon of plots. The final step is to merge the plots back to the trees. This gives each tree both a geometry of their plot location and the average household income of the nearby block groups. 
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+This results in a dataset of trees which each have income values associated with them. This allows graphs to be made which classify tree species by average household income. This process is done for each city to provide unique city by city graphs of tree species and average household incomes. Since there are many different tree species within large cities the trees are reduced to the five most common species in order to simplify graphs and remove tree species with low sample sizes.
