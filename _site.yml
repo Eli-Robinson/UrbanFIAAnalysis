@@ -1,0 +1,15 @@
+name: "Research Project"
+navbar:
+  title: "My Website"
+  left:
+    - text: "Writeup"
+      href: index.html
+    - text: "Additional Resources"
+      href: about.html
+output_dir: "."
+output:
+  html_document:
+    theme: journal
+    highlight: textmate
+    toc: true 
+    toc_float: true 
