@@ -5,7 +5,9 @@ navbar:
     - text: "Writeup"
       href: index.html
     - text: "Additional Resources"
-      href: about.html
+      href: figures.html
+    - text: "Codebook"
+      href: FIASpecies.html
 output_dir: "."
 output:
   html_document:
