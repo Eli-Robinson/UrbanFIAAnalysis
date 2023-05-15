@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Writeup"
       href: index.html
-    - text: "Additional Resources"
+    - text: "All Figures"
       href: figures.html
     - text: "Codebook"
       href: FIASpecies.html
