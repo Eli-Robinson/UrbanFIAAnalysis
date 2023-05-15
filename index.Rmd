@@ -30,12 +30,19 @@ The final result is a dataset of trees which has species name from the original 
 
 In order to display results we plotted the 5 most common tree species in a city by the mean local income found via the spatial analysis. This will give an understanding of some of the common tree species in each city and how they relate to the local income.
 
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Austin-Round Rock.png "figure 1")
 
-These first two graphs of Austin, Texas and San Antonio, Texas are quite similar. Four of the five most common trees in the city are shared between the two, and each show similar results, with sugar berry on the low end, cedar elm towards the middle of the income and, ashe juniper and live oak towards the higher end of the average local income. The graph of San Antonio shows one potentially large error with the methodology that should be resolved with future work. There are a few trees at a zero value for mean local income. This is not due to being in an area where people do not earn money but rather the trees are in areas where there are no people living. This could be business districts that are not zoned for living, parks and natural lands, or government buildings that have a relatively small block group size.
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/San Antonio.png "figure 11")
 
-When looking at the graph of Springfield, Missouri there are two things that stand out. The first is that all five of the common trees appear to be in the same income brackets. The other is that due to Springfield being a small city the mean local incomes of this city are much lower than some of the other cities that have been shown.
+These first two graphs of Austin, Texas (Figure 1) and San Antonio, Texas (figure 11) are quite similar. Four of the five most common trees in the city are shared between the two, and each show similar results, with sugar berry on the low end, cedar elm towards the middle of the income and, ashe juniper and live oak towards the higher end of the average local income. The graph of San Antonio shows one potentially large error with the methodology that should be resolved with future work. There are a few trees at a zero value for mean local income. This is not due to being in an area where people do not earn money but rather the trees are in areas where there are no people living. This could be business districts that are not zoned for living, parks and natural lands, or government buildings that have a relatively small block group size.
 
-In Washington D.C. there is a difference between the common tree species with many american beech trees in wealthy areas and red maples and white oak in the lower income areas. This graph shows a good spread between all of the different species.
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Springfield, MO.png "figure 15")
+
+When looking at the graph of Springfield, Missouri (figure 15) there are two things that stand out. The first is that all five of the common trees appear to be in the same income brackets. The other is that due to Springfield being a small city the mean local incomes of this city are much lower than some of the other cities that have been shown.
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Washington-Arlington.png "figure 19")
+
+In Washington D.C. (figure 19) there is a difference between the common tree species with many american beech trees in wealthy areas and red maples and white oak in the lower income areas. This graph shows a good spread between all of the different species.
 
 ## Discussion
 
