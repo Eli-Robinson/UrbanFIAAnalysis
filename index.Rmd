@@ -8,8 +8,10 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Abstract
+This study aimed to understand if there was a connection between tree species and income levels in urban areas across ten different cities in the US, using data from the Urban Forest Inventory and Analysis (FIA) dataset and census block group information from the 2020 US Census Bureau American Community Survey. The FIA dataset provides detailed information on urban trees, including diameter, height, condition, biomass, and species. The study used spatial analysis to associate each tree with the average household income of the surrounding neighborhood. The results showed that the five most common tree species in each city correlated differently with the mean local income, with some species appearing more frequently in high-income areas, while others were more common in low-income areas. The study identified potential limitations of the methodology, such as areas with no people living, and highlighted the need for more research to address these limitations. The findings of this study can inform policy decisions and resource allocation aimed at reducing ecological inequality in urban areas.
 
-## Intro and Past Work
+## Introduction
 
 Trees have a major effect on cities being able to reduce urban heat island effect, mitigate air pollution, improve drainage, and provide health benefits to humans (Speak, 2018; Wolf, 2020). Every tree however, provides different services at different levels. Each tree species provides a different value of ecosystem service to the environment it is in and specific tree species are often overlooked when urban tree studies are performed. It is important to understand the spatial distribution of these urban trees across urban areas and across different socioeconomic groups in order to understand if there is inequality in a city based on urban trees in order to inform policy makers and allocate resources in order to prevent this ecological inequality.
 

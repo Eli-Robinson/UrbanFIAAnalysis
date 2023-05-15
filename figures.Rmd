@@ -9,5 +9,56 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Austin, Texas
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Austin-Round Rock.png "figure 1")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Austin-Round Rock.png "figure 2")
+
+
+## Chicago, Illinois
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Chicago.png "figure 3")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Chicago.png "figure 4")
+
+## Houston, Texas
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Houston.png "figure 5")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Houston.png "figure 6")
+
+## Kansas City, Missouri
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Kansas City.png "figure 7")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Kansas City.png "figure 8")
+
+## Portland, Oregon
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Portland-Vancouver.png "figure 9")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Portland-Vancouver.png "figure 10")
+
+## San Antonio, Texas
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/San Antonio.png "figure 11")
+![Species Diversity Boxplot](./Figures/Tree Distribution/San Antonio.png "figure 12")
+
+## San Diego, California
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/San Diego.png "figure 13")
+![Species Diversity Boxplot](./Figures/Tree Distribution/San Diego.png "figure 14")
+
+## Springfield, Missouri
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Springfield, MO.png "figure 15")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Springfield, MO.png "figure 16")
+
+## Saint Louis, Missouri
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/St. Louis.png "figure 17")
+![Species Diversity Boxplot](./Figures/Tree Distribution/St. Louis.png "figure 18")
+
+## Washington D.C
+
+![Species Diversity Boxplot](./Figures/Species Diversity Boxplots/Washington-Arlington.png "figure 19")
+![Species Diversity Boxplot](./Figures/Tree Distribution/Washington-Arlington.png "figure 20")
+
+
 
