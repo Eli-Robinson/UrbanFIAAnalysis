@@ -1,6 +1,6 @@
 name: "Research Project"
 navbar:
-  title: "My Website"
+  title: "Urban Tree Analysis"
   left:
     - text: "Writeup"
       href: index.html
