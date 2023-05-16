@@ -1,5 +1,5 @@
 ---
-title: "Spatial Distribtuion of Urban Tree Species"
+title: "Associations Between Tree Species Occurrence and Neighborhood Income in the Urban United States"
 author: "Eli Robinson"
 date: "`r Sys.Date()`"
 output: html_document
@@ -9,7 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 ## Abstract
-This study aimed to understand if there was a connection between tree species and income levels in urban areas across ten different cities in the US, using data from the Urban Forest Inventory and Analysis (FIA) dataset and census block group information from the 2020 US Census Bureau American Community Survey. The FIA dataset provides detailed information on urban trees, including diameter, height, condition, biomass, and species. The study used spatial analysis to associate each tree with the average household income of the surrounding neighborhood. The results showed that the five most common tree species in each city correlated differently with the mean local income, with some species appearing more frequently in high-income areas, while others were more common in low-income areas. The study identified potential limitations of the methodology, such as areas with no people living, and highlighted the need for more research to address these limitations. The findings of this study can inform policy decisions and resource allocation aimed at reducing ecological inequality in urban areas.
+This study aimed to understand if there was a connection between tree species and income levels in ten different cities in the US, using data from the Urban Forest Inventory and Analysis (FIA) dataset and demographic information from the 2020 US Census Bureau American Community Survey at the census block group level. The Urban FIA dataset provides detailed information on urban trees, including diameter, height, condition, biomass, and species. The study used spatial analysis to investigate associations between tree species and the average household income of the surrounding neighborhood. The results showed that tree species occurrence varied with local income, with some species appearing more frequently in high-income areas, while others were more common in low-income areas. The ecosystem services and disservices provided by trees vary among species, implying associations between neighborhood income and both positive and negative human-plant interactions. These results provide a path towards understanding tree-related inequity in American cities and future research on this topic could help inform policy and tree management decisions that aim to reduce ecological inequity. 
 
 ## Introduction
 
