@@ -11,7 +11,7 @@
 
 <meta name="author" content="Eli Robinson" />
 
-<meta name="date" content="2023-05-15" />
+<meta name="date" content="2023-05-16" />
 
 <title>Spatial Distribtuion of Urban Tree Species</title>
 
@@ -344,7 +344,7 @@ div.tocify {
 <h1 class="title toc-ignore">Spatial Distribtuion of Urban Tree
 Species</h1>
 <h4 class="author">Eli Robinson</h4>
-<h4 class="date">2023-05-15</h4>
+<h4 class="date">2023-05-16</h4>
 
 </div>
 
@@ -370,32 +370,47 @@ reducing ecological inequality in urban areas.</p>
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Trees have a major effect on cities being able to reduce urban heat
-island effect, mitigate air pollution, improve drainage, and provide
-health benefits to humans (Speak, 2018; Wolf, 2020). Every tree however,
-provides different services at different levels. Each tree species
-provides a different value of ecosystem service to the environment it is
-in and specific tree species are often overlooked when urban tree
-studies are performed. It is important to understand the spatial
+<p>Trees have major effects on cities by reducing urban heat island
+effect, mitigate air pollution, improve drainage, and provide health
+benefits to humans (Speak, 2018; Wolf, 2020). Every tree, however,
+provides different services. Each tree species provides a different
+value of ecosystem service to the environment it is in, and differences
+among tee species are often overlooked when urban tree studies are
+performed. For example, certain woods and trees provide different
+abilities to filter air pollution (Chen 2017), have different cooling
+potentials (Rahman, 2020), and have different pollen exposure risks
+(Sousa-Silva, 2021). It is important to understand the spatial
 distribution of these urban trees across urban areas and across
-different socioeconomic groups in order to understand if there is
-inequality in a city based on urban trees in order to inform policy
-makers and allocate resources in order to prevent this ecological
-inequality.</p>
+different socioeconomic groups in order to understand if there are
+differences in tree composition as a function of neighborhood demography
+(e.g., income). Differences in tree composition as a function of income
+could result in inequity in the ecosystem services and disservices
+provided by urban trees. Understanding any such inequity in tree
+composition is the first step towards potential policy and management
+goals of reducing inequity in the services provided by trees.</p>
 <p>Previous research has been done in this area of study including
-studies that measured canopy cover related to urban heat (Mcdonald,
+studies that measured canopy cover related to urban heat (McDonald,
 2021). This study measured the differences between overall tree cover
 and urban heat and found that with less tree cover there is more heat.
-Then expanded that to include socioeconomic factors as well. Another
-study measured green spaces compared to socioeconomic conditions (Li,
-2015) and found that areas in worse socioeconomic conditions have less
-green spaces or green values. Both of these studies and similar other
-studies use satellite imagery, The first through landsat imagery and the
-second through google imagery. These methods are good for getting an
-overall picture but sometimes can miss specific details and key
-information such as tree species. Based on previous work of the FIA
-which mapped forests, this program is now working to collect data for
-trees in urban areas which is the main focus of this study.</p>
+McDonald et al. found that tree cover was also correlated with
+socioeconomic factors. Another study compared green spaces to
+socioeconomic conditions (Li, 2015) and found that areas of lower
+socioeconomic status had fewer green spaces. These studies and many
+similar studies use imagery to quantify tree cover (e.g., Landsat
+imagery or Google Street View). These methods are good for quantifying
+green spaces or tree cover but are unable to provide key information on
+tree species composition.</p>
+<p>Anecdotal evidence suggests that tree species composition varies
+across income levels within cities, however this has not been
+systematically assessed across cities. If so, this could have
+implications for the ecosystem services and disservices provided by
+trees, which could have policy and management implications. A new
+program, the Urban Forest Inventory and Analysis (UFIA) is measuring
+trees in urban areas and provides the first systematic and uniform
+dataset that could be used to compare tree identity and neighborhood
+demography in cities across the United States. Here, I combine UFIA and
+data from the US Census Bureau to quantify associations between tree
+species and income levels in 10 cities in the United States.</p>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
@@ -403,40 +418,60 @@ trees in urban areas which is the main focus of this study.</p>
 block group information from 2020 US Census Bureau American Community
 Survey (Manson, 2022) focusing on average household income. Census block
 group is the finest resolution data that has the average household
-income so that it was used for this study.</p>
-<p>The Urban Forest Inventory and Analysis (FIA) dataset (Edgar, 2021)
-is a relatively new dataset of urban trees. This dataset differs from
-the previous because instead of collecting the data with satellite
-imagery, data is collected by surveyors on the ground. This allows for
-additional information to be collected including diameter of a tree,
-height, calculated biomass, condition of tree, and tree species. Tree
-species were used in this study in order to understand if different tree
-species appear more frequently in high and low income areas. This is the
+income so that it was used for this study. The census variable used for
+this study is AMRE8001 which is the median household income in the past
+12 months (in 2020 inflation-adjusted dollars).</p>
+<p>The UFIA dataset (Edgar, 2021) is a relatively new dataset of urban
+trees. This dataset differs from the remote sensing data that several
+studies have used to compare to socioeconomic data because the UFIA data
+is collected by surveyors on the ground. This allows for additional
+information to be collected including diameter of a tree, height,
+calculated biomass, condition of tree, and tree species. This is the
 first federal program which conducts representative studies and data
-collection. This data set contains a set of tree and plot data that
-contains information about urban trees including location, species,
-condition, and much more with both measured and calculated values. This
-dataset has information for 10 cities (Austin, TX; Chicago, IL; Houston,
-TX; Kansas City, MO; Portland, OR; San Antonio, TX; San Diego, CA;
-Springfield, MO; St. Louis, MO; Washington DC) across the US which will
-be the areas of focus for this study.</p>
-<p>The goal of the project was to associate each tree with a local
-income from the data of surrounding neighborhoods. In order to do this
-The Urban FIA data has trees within plots, which have location values
-associated with them. In order to conduct spatial analysis on tree
-information it is necessary to combine this information at some point.
-First, however, we must find the average household income associated
-with each plot. The divulged coordinates of FIA plots are only accurate
-to within 1 km. To account for this, we buffered each plot by 1 km. We
-intersected the resulting buffer with the census block groups and
-averaged the income, weighted by the census block group area that was
-within the buffer. Then dissolve by plot. This results in the area of
-the buffered plot with the information of the weighted local census
-information. The final step is to merge the plots back to the trees.
-This gives each tree both a geometry of their plot location and the
-average household income of the nearby block groups. The final result is
-a dataset of trees which has species name from the original dataset and
-local income value from the spatial analysis.</p>
+collection of trees in urban areas. This data set contains a set of tree
+and plot data that contains information about urban trees including
+location, species, condition, and much more with both measured and
+calculated values. This dataset has information for 10 cities (Austin,
+TX; Chicago, IL; Houston, TX; Kansas City, MO; Portland, OR; San
+Antonio, TX; San Diego, CA; Springfield, MO; St. Louis, MO; Washington
+DC) across the US which will be the areas of focus for this study.
+Additional UFIA censuses are currently ongoing in 34 other cities.</p>
+<p>The goal of the project was to investigate associations between tree
+species occurrence and neighborhood income. In order to do this the UFIA
+data has trees within plots, which have location values associated with
+them. In order to conduct spatial analysis on tree information it is
+necessary to combine this information at some point. First, however, I
+must find the average household income associated with each plot. The
+divulged coordinates of UFIA plots are only accurate to within 1 km. To
+account for this, I buffered each plot by 1 km. I intersected the
+resulting buffer with the census block groups and averaged the income,
+weighted by the census block group area that was within the buffer. Then
+I dissolved by plot. This results in the area of the buffered plot with
+the information of the weighted local census information. Census
+information for the buffered area was then merged with the UFIA tree
+data. This gives each tree both a geometry of their plot location and
+the average household income of the nearby block groups. </p>
+<p>The result is a dataset of trees which has species name from the
+original dataset and local income value from the spatial analysis. In
+order to display results, I plotted the 5 most common tree species in a
+city by the mean local income found via the spatial analysis. This will
+give an understanding of some of the common tree species in each city
+and how they relate to the local income. I also mapped the plots across
+the city colored by species in order to better understand the spatial
+context of each city. To test whether tree occurrence varied among
+income levels I used an ANOVA and then a Tukey’s HSD (honestly
+significant difference) test.</p>
+<p>This analysis was done in Python 3 using the Pandas and Geopandas
+libraries for spatial analysis and Seaborn for plotting and
+visualization, SciPy for statistics, NumPy for arithmetic, as well as
+other small libraries for easy access. The codebook can be found on the
+website (<a
+href="https://eli-robinson.github.io/UrbanFIAAnalysis/FIASpecies.html"
+class="uri">https://eli-robinson.github.io/UrbanFIAAnalysis/FIASpecies.html</a>)
+and also on the public GitHub repository (<a
+href="https://github.com/Eli-Robinson/UrbanFIAAnalysis"
+class="uri">https://github.com/Eli-Robinson/UrbanFIAAnalysis</a>) which
+can be cloned for further research.</p>
 </div>
 <div id="results" class="section level2">
 <h2>Results</h2>
@@ -444,51 +479,81 @@ local income value from the spatial analysis.</p>
 in a city by the mean local income found via the spatial analysis. This
 will give an understanding of some of the common tree species in each
 city and how they relate to the local income.</p>
+<p><img src="Figures/Tree%20Distribution/San%20Antonio.png"
+title="Species Diversity Boxplot"
+alt="Figure 1: Spatial distribution of Urban FIA plots in San Antonio, Texas, colored by tree species. Each dot on the map represents a plot where the species is the most commonly occurring. Only plots with the most of the top 5 species are shown, all other plots are hidden." />
+Fig. 1 shows a map of San Antonio with the plots where the five most
+common species are. This map shows many Ashe juniper (<em>Juniperus
+ashei</em>) trees in the northern areas of the city and many honey
+mesquite trees (<em>Prosopis glandulosa</em>) on the southern block of
+the city with sugarberry, (<em>Celtis laevigata</em>) and cedar elm
+(<em>Ulmus crassifolia</em>) more in the center and downtown areas and
+live oak (<em>Quercus virginiana</em>) seems to have been spread around
+the entire city. This map and others of different cities can help to
+provide additional context for the following results.</p>
 <div class="figure">
 <img
 src="Figures/Species%20Diversity%20Boxplots/Austin-Round%20Rock.png"
 title="Species Diversity Boxplot" alt="" />
-<p class="caption">1</p>
+<p class="caption"><font size="1">Figure 2: Association between tree
+species occurrence and neighborhood income in Austin, Texas, filtered by
+the top five most commonly occurring species. The line in the box shows
+median value, the box max and minimum are one quartile, and the whiskers
+show the maximum and minimum values dismissing outliers. Species that do
+not have a shared letter above them are statistically significant in
+terms of mean income.</font></p>
 </div>
 <div class="figure">
 <img src="Figures/Species%20Diversity%20Boxplots/San%20Antonio.png"
 title="Species Diversity Boxplot" alt="" />
-<p class="caption">2</p>
+<p class="caption"><font size="1">Figure 3: Association between tree
+species occurrence and neighborhood income in San Antonio, Texas,
+filtered by the top five most commonly occurring species. The line in
+the box shows median value, the box max and minimum are one quartile,
+and the whiskers show the maximum and minimum values dismissing
+outliers. Species that do not have a shared letter above them are
+statistically significant in terms of mean income.</font></p>
 </div>
-<p>These first two graphs of Austin, Texas (Figure 1) and San Antonio,
-Texas (figure 2) are quite similar. Four of the five most common trees
-in the city are shared between the two, and each show similar results,
-with sugar berry on the low end, cedar elm towards the middle of the
-income and, ashe juniper and live oak towards the higher end of the
-average local income. The graph of San Antonio shows one potentially
-large error with the methodology that should be resolved with future
-work. There are a few trees at a zero value for mean local income. This
-is not due to being in an area where people do not earn money but rather
-the trees are in areas where there are no people living. This could be
-business districts that are not zoned for living, parks and natural
-lands, or government buildings that have a relatively small block group
-size.</p>
+<p>These first two graphs of Austin, Texas (Fig. 2) and San Antonio,
+Texas (Fig. 3) are quite similar. Four of the five most common trees in
+the city are shared between the two, and each show similar results, with
+sugarberry on the low end, cedar elm towards the middle of the income
+and, ashe juniper and live oak towards the higher end of the average
+local income.</p>
 <div class="figure">
 <img
 src="Figures/Species%20Diversity%20Boxplots/Springfield,%20MO.png"
 title="Species Diversity Boxplot" alt="" />
-<p class="caption">3</p>
+<p class="caption"><font size="1">Figure 4: Association between tree
+species occurrence and neighborhood income in Springfield, Missouri,
+filtered by the top five most commonly occurring species. The line in
+the box shows median value, the box max and minimum are one quartile,
+and the whiskers show the maximum and minimum values dismissing
+outliers. Species that do not have a shared letter above them are
+statistically significant in terms of mean income.</font></p>
 </div>
-<p>When looking at the graph of Springfield, Missouri (figure 15) there
-are two things that stand out. The first is that all five of the common
-trees appear to be in the same income brackets. The other is that due to
+<p>When looking at the graph of Springfield, Missouri there are two
+things that stand out. The first is that all five of the common trees
+appear to be in the same income brackets. The other is that due to
 Springfield being a small city the mean local incomes of this city are
 much lower than some of the other cities that have been shown.</p>
 <div class="figure">
 <img
 src="Figures/Species%20Diversity%20Boxplots/Washington-Arlington.png"
 title="Species Diversity Boxplot" alt="" />
-<p class="caption">4</p>
+<p class="caption"><font size="1">Figure 5: Association between tree
+species occurrence and neighborhood income in Washington D.C., filtered
+by the top five most commonly occurring species. The line in the box
+shows median value, the box max and minimum are one quartile, and the
+whiskers show the maximum and minimum values dismissing outliers.
+Species that do not have a shared letter above them are statistically
+significant in terms of mean income.</font></p>
 </div>
-<p>In Washington D.C. (figure 19) there is a difference between the
-common tree species with many american beech trees in wealthy areas and
-red maples and white oak in the lower income areas. This graph shows a
-good spread between all of the different species.</p>
+<p>In Washington D.C. there is a difference between the common tree
+species with many American beech (<em>Fagus Grandifolia</em>) trees in
+wealthy areas and red maples (<em>Acer rubrum</em>) and white oak
+(<em>Quercus alba</em>) in the lower income areas. This graph shows a
+good spread between all the different species.</p>
 </div>
 <div id="discussion" class="section level2">
 <h2>Discussion</h2>
@@ -496,77 +561,93 @@ good spread between all of the different species.</p>
 relationship between income and tree species in urban areas. While
 similar studies have found that income is often a predictor of tree
 cover, with low-income neighborhoods having less tree cover than
-higher-income neighborhoods, these results are able to dive deeper into
-the nuance of tree species. In these urban areas by showing that certain
-tree species tend to be more common in high-income areas, while other
-species are more commonly found in low-income areas.</p>
-<p>All trees are not the same and different species of trees provide
-different ecosystem services. (Do you think I should give specific
-examples?) Some trees provide more drainage, or shade, or other factors
-and different trees will affect the ecosystem and the city in different
-ways. These findings are particularly interesting because they shed
-light on potential inequities in urban forestry and urban tree
-management and could highlight the need for a more equitable
-distribution of trees. Understanding the patterns of inequities is
-crucial for improving environmental and social equity in urban
+higher-income neighborhoods (McDonald, 2021; Li, 2015), the results
+presented here provide the nuance of tree species identity. In these
+urban areas, certain tree species tend to be more common in high-income
+areas, while other species are more commonly found in low-income
 areas.</p>
-<p>One of the species that commonly appear in low income areas,
-especially in Texas, is the sugarberry tree. The sugarberry tree is a
-tree that is native to the southeast United States and is a short to
-medium sized tree that grows fast and can grow in a variety of soil
-types and conditions. This makes the sugarberry a very opportunistic
-tree as it is able to gain hold and grow in a variety of environments.
-The sugar berry tree being a small tree provides less tree cover, and
-environmental benefits than a larger and potentially more desirable
-tree. One such tree that appears in these Texas urban environments is
-the live oak tree. The live oak tree is a deep rooted species which can
-help prevent erosion, and its larger size in width and increased leaf
-areas provide additional tree cover.</p>
-<p>One possible explanation for these patterns is that tree planting and
-maintenance programs may be more common in higher-income neighborhoods.
-Additionally, preferences for certain tree species may differ among
-different income groups. For example, some high-income neighborhoods may
-prefer to plant ornamental trees for aesthetic purposes, while
-low-income neighborhoods may prioritize trees that provide more tangible
-benefits such as shade and improved air quality.</p>
-<p>The implications of these findings are significant. Different trees
-provide a wider range of benefits such as improved air quality, reduced
-energy use, and enhanced mental health. However, not all communities
-have equal access to these benefits. By identifying and addressing
-potential inequities in tree cover, we can work towards creating more
-sustainable and equitable urban environments.</p>
-<p>Future research could further explore the underlying casues of these
+<p>All trees are not the same and different species of trees provide
+different ecosystem services such as trees with thicker leaves and
+denser foliage provide increased shading, and tree wood anatomy can
+provide increased transpiration. (Rahman, 2019). Different trees provide
+a wider range of benefits such as improved air quality, reduced energy
+use, and enhanced mental health. These differences in tree composition
+are therefore likely to affect the ecosystem services and disservices
+provided in rich vs poor neighborhoods; this work suggests that not all
+communities have equal access to these benefits. The findings in this
+study are particularly interesting because they shed light on potential
+inequities in urban forestry and urban tree management and highlight the
+need for a more equitable distribution of trees. Understanding the
+patterns of inequities is a crucial first step towards any eventual
+policy or management goals for improving environmental and social equity
+in urban areas.</p>
+<p>One example of species that commonly appear in low-income areas,
+especially in Texas, is the sugarberry tree, Celtis laevigata
+(Willdenow). The sugarberry tree is a tree that is native to the
+southeast United States and is a short to medium sized tree that grows
+fast and can grow in a variety of soil types and conditions. This makes
+the sugarberry a very opportunistic tree as it can gain hold and grow in
+a variety of environments. The sugar berry tree being a small tree
+provides less tree cover, and environmental benefits than a larger and
+potentially more desirable tree. One such tree that appears in these
+Texas urban environments is the live oak tree. The live oak tree is a
+deep-rooted species which can help prevent erosion, and its larger size
+in width and increased leaf areas provide additional tree cover. This is
+just one example and there are similar species in high and low income
+areas in other cities as well.</p>
+<p>Urban trees tend to shift more towards these invasive or
+opportunistic species when tree planting and management decrease (Nowak,
+2012). One possible explanation for the patterns found here is that the
+tree planting and maintenance programs may be more common in
+higher-income neighborhoods which could create a disparity between
+neighborhoods of different socioeconomic status.</p>
+<p>There are some limitations with the current methods. One of the
+limitations is data clustering, which is when there are many trees of
+the same species with the same value for mean local income. This occurs
+when there are many trees of the same species in one plot. Since the
+income is assigned by plot. All the trees are given the same mean local
+income which can cluster the data; future work should correct for this
+by including a random effect for plot within each city. Another
+limitation is the necessary one-kilometer buffering because the UFIA
+plot coordinates are intentionally jittered by up to 1 km. This
+buffering of the plots creates a larger range of incomes that are
+aggregated which in turn could create some inaccuracies of local income.
+These limitations are due to the nature of data collection and should be
+kept in mind but should not be detrimental to the study. In some cases,
+there are a few trees at a zero value for mean local income (e.g., in
+San Antonio). This is not due to being in an area where people have an
+income of zero but rather the trees are in areas where there are no
+people living. This could be business districts that are not zoned for
+living, parks and natural lands, or government buildings that have a
+relatively small block group size.</p>
+<p>Future research could further explore the underlying causes of these
 patterns and identify potential solutions for improving equitable access
 to trees in urban areas. Additionally, continued monitoring and data
-collection efforts such as the Urban FIA program can help inform
-management and policy decisions.</p>
-</div>
-<div id="future-work-conclusion" class="section level2">
-<h2>Future Work + Conclusion</h2>
-<p>Some future research can be done based off of this work. One thing
-that could be done is to fully map out the ecosystem service and
-disservice of each tree species. This could be done by creating a model
-based on literature such as Bolund, 2017 and other papers which can help
-to determine how valuable a tree is to the urban environment based on a
-variety of factors. This could assign some kind of tree service
-disservice value and help to better understand a connection between
-ecosystem services and disservice that is more in depth than tree
-species.</p>
-<p>Another piece of research that could be done is to use different
-information within the FIA data. The Urban FIA data has many different
-variables which are all interesting and could each have individual
-studies on them. These studies could also make more sense across a
-broader scope of cities as tree species are generally most determined by
-environment rather than other factors such as tree height or condition,
-which are affected but not drastically different city by city.</p>
-<p>In conclusion, the socioeconomic patterns of urban tree species
-provide valuable insights into the complex relationship between cities
-and nature. By examining what different tree species are distributed
-across urban areas and their correlation with various socioeconomic
-factors, we can gain a deeper understanding of the ways in which urban
-trees impact an urban ecosystem. This information can inform urban
-planning and management strategies, allowing us to create more equitable
-and sustainable urban environments.</p>
+collection efforts such as the UFIA program can help inform management
+and policy decisions.  One example of future research that can be done
+based off this work is to fully map out the ecosystem service and
+disservice of each tree species. Creating a model based on literature
+such as Bolund, 2017 and other papers which can help to determine how
+valuable a tree is to the urban environment based on a variety of
+factors. This could assign the service and disservices provided by trees
+of each species and help to elucidate the connection between
+neighborhood demography, tree composition, and ecosystem services and
+disservices. Another piece of research that could be done is to use
+different information within the UFIA data. The UFIA data has many
+different variables which are all interesting and could each have
+individual studies on them. These studies could also make more sense
+across a broader scope of cities as tree species are generally most
+determined by environment rather than other factors such as tree height
+or condition, which are affected but may not be drastically different
+city by city.</p>
+<p>In conclusion, species of trees in urban areas of the United States
+are associated with income, with some species corresponding to higher
+and some corresponding to lower income areas. This difference may result
+in different ecosystem services provided by trees, including pollen
+levels, amount of shade, and air filtration. Understanding where these
+differences lie is the first step towards ensuring each neighborhood has
+equal access and resources to the environmental services that all
+different tree species provide.</p>
 </div>
 <div id="works-cited" class="section level2">
 <h2>Works Cited</h2>
@@ -579,22 +660,42 @@ class="uri">https://doi.org/10.1016/j.ecolind.2018.07.048</a>.</p>
 <p>Edgar, Christopher B, et al. “Strategic National Urban Forest
 Inventory for the United States.” Journal of Forestry, vol. 119, no. 1,
 2020, pp. 86–95, <a href="https://doi.org/10.1093/jofore/fvaa047"
-class="uri">https://doi.org/10.1093/jofore/fvaa047</a>.</p>
-<p>McDonald RI, Biswas T, Sachar C, Housman I, Boucher TM, Balk D, et
+class="uri">https://doi.org/10.1093/jofore/fvaa047</a>. </p>
+<p>McDonald RI, Biswas T, ddSachar C, Housman I, Boucher TM, Balk D, et
 al. (2021) The tree cover and temperature disparity in US urbanized
 areas: Quantifying the association with income across 5,723 communities.
 PLoS ONE 16(4): e0249715. <a
 href="https://doi.org/10.1371/journal.pone.0249715"
 class="uri">https://doi.org/10.1371/journal.pone.0249715</a></p>
+<p>Nowak, D. J. (2012). Contrasting natural regeneration and tree
+planting in fourteen North American cities. Urban Forestry &amp; Urban
+Greening, 11(4), 374–382. <a
+href="https://doi.org/10.1016/j.ufug.2012.02.005"
+class="uri">https://doi.org/10.1016/j.ufug.2012.02.005</a></p>
+<p>Per Bolund, Sven Hunhammar, Ecosystem services in urban areas,
+Ecological Economics, Volume 29, Issue 2, 1999, Pages 293-301, ISSN
+0921-8009, <a href="https://doi.org/10.1016/S0921-8009(99)00013-0"
+class="uri">https://doi.org/10.1016/S0921-8009(99)00013-0</a>.</p>
+<p>Rahman, M. A., Stratopoulos, L. M. F., Moser-Reischl, A., Zölch, T.,
+Häberle, K. H., Rötzer, T., et al. (2020). Traits of trees for cooling
+urban heat islands: A meta-analysis. Building and Environment, 170,
+106606. <a href="https://doi.org/10.1016/J.BUILDENV.2019.106606"
+class="uri">https://doi.org/10.1016/J.BUILDENV.2019.106606</a></p>
+<p>Sousa-Silva, R., Smargiassi, A., Kneeshaw, D. et al. Strong
+variations in urban allergenicity riskscapes due to poor knowledge of
+tree pollen allergenic potential. Sci Rep 11, 10196 (2021). <a
+href="https://doi.org/10.1038/s41598-021-89353-7"
+class="uri">https://doi.org/10.1038/s41598-021-89353-7</a></p>
 <p>Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and
 Steven Ruggles. IPUMS National Historical Geographic Information System:
 Version 17.0 [dataset]. Minneapolis, MN: IPUMS. 2022. <a
 href="http://doi.org/10.18128/D050.V17.0"
 class="uri">http://doi.org/10.18128/D050.V17.0</a></p>
-<p>Per Bolund, Sven Hunhammar, Ecosystem services in urban areas,
-Ecological Economics, Volume 29, Issue 2, 1999, Pages 293-301, ISSN
-0921-8009, <a href="https://doi.org/10.1016/S0921-8009(99)00013-0"
-class="uri">https://doi.org/10.1016/S0921-8009(99)00013-0</a>.</p>
+<p>Variation in tree species ability to capture and retain airborne fine
+particulate matter (PM2. 5) L Chen, C Liu, L Zhang, R Zou, Z Zhang -
+Scientific reports, 2017 - Springer <a
+href="https://link.springer.com/content/pdf/10.1038/s41598-017-03360-1.pdf"
+class="uri">https://link.springer.com/content/pdf/10.1038/s41598-017-03360-1.pdf</a></p>
 <p>Wolf KL, Lam ST, McKeen JK, Richardson GRA, van den Bosch M,
 Bardekjian AC. Urban Trees and Human Health: A Scoping Review.
 International Journal of Environmental Research and Public Health. 2020;
