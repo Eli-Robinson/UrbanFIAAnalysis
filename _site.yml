@@ -8,7 +8,7 @@ navbar:
       href: figures.html
     - text: "Codebook"
       href: FIASpecies.html
-    - text: "Abouth the Project"
+    - text: "About the Project"
       href: about.html
 output_dir: "."
 output:
